@@ -1,3 +1,3 @@
 def calcularCadena(cad)
-    return 3
+    return cad.to_i
 end
