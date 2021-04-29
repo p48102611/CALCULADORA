@@ -36,4 +36,5 @@ RSpec.describe "calculadora" do
   it "deberia devolver el numero 109 para la cadena '//[;]\n5;100;3;1'" do
     expect(calcularCadena("//[;]\n5;100;3;1")).to eq 109
   end
+
 end
