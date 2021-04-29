@@ -1,22 +1,20 @@
+def sumar_numeros(array)
+    sum = 0
+    array.each do |j|
+        sum += j.to_i
+    end
+    return sum
+end
 def calcularCadena(cad)
-
 
     if(cad[1] != "/")
         tmp = cad.gsub("\n",",").split(",")
-        sum = 0
-        tmp.each do |j|
-            sum += j.to_i
-        end
-        return sum
+        return sumar_numeros(tmp)
     else
         tmp = cad.split("\n")
         tmp_left = tmp[0]
         tmp_right = tmp[1].split(";")
-        sum = 0
-        tmp_right.each do |j|
-            sum += j.to_i
-        end
-        return sum
+        return sumar_numeros(tmp_right)
     end
     # tmp = ""
     # array_num = [0]
