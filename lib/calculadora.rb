@@ -1,3 +1,4 @@
 def calcularCadena(cad)
-    return cad.to_i
+    tmp = cad.split(',')
+    return tmp[0].to_i + tmp[1].to_i
 end
