@@ -9,4 +9,7 @@ RSpec.describe "calculadora" do
   it "deberia devolver el numero 6 para la cadena '5,1'" do
     expect(calcularCadena("5,1")).to eq 6
   end
+  it "deberia devolver el numero 6 para la cadena '5,1,3'" do
+    expect(calcularCadena("5,1,3")).to eq 9
+  end
 end
