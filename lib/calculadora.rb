@@ -15,14 +15,12 @@ def calcularCadena(cad)
     if(!(cad.match("//")))
         tmp = cad.gsub("\n",",").split(",")
     else
-        #//[#][%][)]\n5#9%3)100
         tmp_left = ((((cad.split("\n")[0]).gsub "/","").gsub "[","").gsub "]",",").split(",")
-        return tmp_left
-        # tmp_right = cad.split("\n")[1]
-        # tmp_left.each do |i|
-        #     tmp_right = tmp_right.tr(i,",")
-        # end
-        # tmp = tmp_right.split(",")
+        tmp_right = cad.split("\n")[1]
+        tmp_left.each do |i|
+            tmp_right = tmp_right.tr(i,",")
+        end
+        tmp = tmp_right.split(",")
     end
     return sumar_numeros(tmp)
 end

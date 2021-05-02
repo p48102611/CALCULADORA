@@ -33,16 +33,16 @@ RSpec.describe "calculadora" do
   it "deberia devolver el numero 18 para la cadena '5,1001,3,10'" do
     expect(calcularCadena("5,1001,3,10")).to eq 18
   end
-  # it "deberia devolver el numero 109 para la cadena '//[;]\n5;100;3;1'" do
-  #   expect(calcularCadena("//[;]\n5;100;3;1")).to eq 109
-  # end
-  # it "deberia devolver el numero 117 para la cadena '//[#][%][)]\n5#9%3)100'" do
-  #   expect(calcularCadena("//[#][%][)]\n5#9%3)100")).to eq 117
-  # end
-  # it "deberia devolver el numero 127 para la cadena '//[#][%][)][&]\n5#9%3)100&10'" do
-  #   expect(calcularCadena("//[#][%][)][&]\n5#9%3)100&10")).to eq 127
-  # end
-  it "deberia devolver el numero 117 para la cadena '//[#][%][)]\n5#9%3)100'" do
-    expect(calcularCadena("//[#][%][)]\n5#9%3)100")).to eq ["#","%",")"]
+  it "deberia devolver el numero 109 para la cadena '//[;]\n5;100;3;1'" do
+    expect(calcularCadena("//[;]\n5;100;3;1")).to eq 109
   end
+  it "deberia devolver el numero 117 para la cadena '//[#][%][)]\n5#9%3)100'" do
+    expect(calcularCadena("//[#][%][)]\n5#9%3)100")).to eq 117
+  end
+  it "deberia devolver el numero 127 para la cadena '//[#][%][)][&]\n5#9%3)100&10'" do
+    expect(calcularCadena("//[#][%][)][&]\n5#9%3)100&10")).to eq 127
+  end
+  # it "deberia devolver el numero 117 para la cadena '//[#][%][)]\n5#9%3)100'" do
+  #   expect(calcularCadena("//[#][%][)]\n5#9%3)100")).to eq ["#","%",")"]
+  # end
 end
