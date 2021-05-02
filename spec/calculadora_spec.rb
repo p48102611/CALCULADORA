@@ -42,6 +42,9 @@ RSpec.describe "calculadora" do
   it "deberia devolver el numero 127 para la cadena '//[#][%][)][&]\n5#9%3)100&10'" do
     expect(calcularCadena("//[#][%][)][&]\n5#9%3)100&10")).to eq 127
   end
+  it "deberia devolver el numero 6 para la cadena '//[***]\n1***2***3'" do
+    expect(calcularCadena("//[***]\n1***2***3")).to eq 6
+  end
   # it "deberia devolver el numero 117 para la cadena '//[#][%][)]\n5#9%3)100'" do
   #   expect(calcularCadena("//[#][%][)]\n5#9%3)100")).to eq ["#","%",")"]
   # end
