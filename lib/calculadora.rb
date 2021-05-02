@@ -12,28 +12,17 @@ def reducir_cadena(cad,caracter)
 end
 def calcularCadena(cad)
     caracteres_borrar = ["//", "["]
-    if(cad[1] != "/")
+    if(!(cad.match("//")))
         tmp = cad.gsub("\n",",").split(",")
-        return sumar_numeros(tmp)
     else
-        tmp = cad.split("\n")
-        tmp_left = tmp[0]
-        tmp_right = tmp[1]
-        #//[;]
-        caracteres_borrar.each do |i|
-            tmp_left = tmp_left.gsub(i,"")
-        end
-        #;]
-        tmp_left = tmp_left.gsub("]",",").split(",")
-        tmp_left = tmp_left.pop()
-        if(tmp_left.length == 1)
-            tmp_right = tmp_right.split(tmp_left)
-        else
-            tmp_left.each do |j|
-                tmp_right = tmp_right.gsub(j,",")
-            end
-            tmp_right = tmp_right.split(",")
-        end
-        return sumar_numeros(tmp_right)
+        #//[#][%][)]\n5#9%3)100
+        tmp_left = ((((cad.split("\n")[0]).gsub "/","").gsub "[","").gsub "]",",").split(",")
+        return tmp_left
+        # tmp_right = cad.split("\n")[1]
+        # tmp_left.each do |i|
+        #     tmp_right = tmp_right.tr(i,",")
+        # end
+        # tmp = tmp_right.split(",")
     end
+    return sumar_numeros(tmp)
 end
