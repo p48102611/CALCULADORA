@@ -1,4 +1,4 @@
-def sumar_numeros(array)
+def sumarNumeros(array)
     sum = 0
     array.each do |j|
         if j.to_i <= 1000
@@ -7,20 +7,20 @@ def sumar_numeros(array)
     end
     return sum
 end
-def reducir_cadena(cad,caracter)
-    return cad.split(caracter).join("")
-end
-def calcularCadena(cad)
-    caracteres_borrar = ["//", "["]
-    if(!(cad.match("//")))
-        tmp = cad.gsub("\n",",").split(",")
+def calcularCadena(cadena)
+    if(!(cadena.match("//"))) #si la cadena no coincide con el caracter "//"
+        cadenaNumeros = cadena.gsub("\n",",").split(",")
     else
-        tmp_left = ((((cad.split("\n")[0]).gsub "/","").gsub "[","").gsub "]",",").split(",")
-        tmp_right = cad.split("\n")[1]
-        tmp_left.each do |i|
-            tmp_right = tmp_right.tr(i,",")
+        delimitadores = obtenerDelimitadores(cadena)
+        numeros = cadena.split("\n")[1]
+        delimitadores.each do |i|
+            numeros = numeros.tr(i,",")
         end
-        tmp = tmp_right.split(",")
+        cadenaNumeros = numeros.split(",")
     end
-    return sumar_numeros(tmp)
+    return sumarNumeros(cadenaNumeros)
+end
+ 
+def obtenerDelimitadores(cadena)
+    ((((cadena.split("\n")[0]).gsub "/","").gsub "[","").gsub "]",",").split(",")
 end
