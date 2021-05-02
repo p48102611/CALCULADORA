@@ -1,3 +1,13 @@
+def calcularCadena(cadena)
+    if(!(cadena.match("//"))) #si la cadena no coincide con el caracter "//"
+        cadenaNumeros = cadena.gsub("\n",",").split(",")
+    else
+        delimitadores = obtenerDelimitadores(cadena)
+        cadenaNumeros = obtenerNumeros(cadena,delimitadores)
+    end
+    return sumarNumeros(cadenaNumeros)
+end
+
 def sumarNumeros(array)
     sum = 0
     array.each do |j|
@@ -7,20 +17,15 @@ def sumarNumeros(array)
     end
     return sum
 end
-def calcularCadena(cadena)
-    if(!(cadena.match("//"))) #si la cadena no coincide con el caracter "//"
-        cadenaNumeros = cadena.gsub("\n",",").split(",")
-    else
-        delimitadores = obtenerDelimitadores(cadena)
-        numeros = cadena.split("\n")[1]
-        delimitadores.each do |i|
-            numeros = numeros.tr(i,",")
-        end
-        cadenaNumeros = numeros.split(",")
-    end
-    return sumarNumeros(cadenaNumeros)
-end
- 
+
 def obtenerDelimitadores(cadena)
     ((((cadena.split("\n")[0]).gsub "/","").gsub "[","").gsub "]",",").split(",")
+end
+
+def obtenerNumeros(cadena,delimitadores)
+    numeros = cadena.split("\n")[1]
+    delimitadores.each do |i|
+        numeros = numeros.tr(i,",")
+    end
+    return numeros.split(",")
 end
